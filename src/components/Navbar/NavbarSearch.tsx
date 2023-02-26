@@ -1,13 +1,19 @@
-import { Flex, Input } from "@chakra-ui/react";
+import { Flex, Input, useDisclosure } from "@chakra-ui/react";
+import SearchModal from "../SearchModal/SearchModal";
 
 const NavbarSearch = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Flex flex="1" maxW="lg" align="center" gap="2">
       <Input
         type="text"
         bg="white"
-        placeholder="Seach for a song, artist, album or playlist"
+        placeholder="What do you want to listen to?"
+        readOnly
+        onClick={onOpen}
       />
+      <SearchModal isOpen={isOpen} onClose={onClose} />
     </Flex>
   );
 };

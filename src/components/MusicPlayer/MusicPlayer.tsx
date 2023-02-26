@@ -1,14 +1,16 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, Show } from "@chakra-ui/react";
 import MusicControls from "./MusicControls";
 import MusicTrackInfo from "./MusicTrackInfo";
 import VolumeControls from "./VolumeControls";
 
 const MusicPlayer = () => {
   return (
-    <Flex justify="space-between" align="center" py="4">
+    <Flex gap="2" justify="space-between" align="center" py={["4", "3"]}>
       <MusicTrackInfo />
       <MusicControls />
-      <VolumeControls />
+      <Show above="lg">
+        <VolumeControls />
+      </Show>
     </Flex>
   );
 };
