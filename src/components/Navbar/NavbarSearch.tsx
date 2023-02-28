@@ -1,5 +1,5 @@
 import { Flex, Input, useDisclosure } from "@chakra-ui/react";
-import SearchModal from "../SearchModal/SearchModal";
+import SearchModal from "./SearchModal";
 
 const NavbarSearch = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
